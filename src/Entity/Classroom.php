@@ -7,7 +7,12 @@ use App\Repository\ClassroomRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ * @ApiResource(itemOperations={
+ *     "get",
+ *     "delete",
+ *     "activate"={"route_name"="clasroom_activate", "method"="POST"},
+ *     "deactivate"={"route_name"="clasroom_deactivate", "method"="POST"}
+ * })
  * @ORM\Entity(repositoryClass=ClassroomRepository::class)
  */
 class Classroom
